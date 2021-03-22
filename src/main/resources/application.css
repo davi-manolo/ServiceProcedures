@@ -1,0 +1,41 @@
+.main {
+    -fx-background-color: rgb(243, 243, 243);
+    -fx-font-smoothing-type: gray;
+}
+
+.buttonExport {
+    -fx-background-color: rgb(227,95,145);
+    -fx-font-smoothing-type: gray;
+}
+
+.buttonExport:pressed {
+    -fx-background-color: rgb(227,95,145);
+}
+
+.buttonExport:hover {
+    -fx-background-color: rgb(232,111,156);
+}
+
+.buttonRemove {
+    -fx-background-color: rgb(0,185,246);
+    -fx-font-smoothing-type: gray;
+}
+
+.buttonRemove:pressed {
+    -fx-background-color: rgb(30,192,254);
+}
+
+.buttonRemove:hover {
+    -fx-background-color: rgb(30,192,254);
+}
+
+.customTableView {
+    -fx-font-family: "Ubuntu";
+}
+
+.table-view .scroll-bar:horizontal .increment-arrow,
+.table-view .scroll-bar:horizontal .decrement-arrow,
+.table-view .scroll-bar:horizontal .increment-button,
+.table-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+}

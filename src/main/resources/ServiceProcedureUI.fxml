@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="1020.0" style="-fx-background-color: #e3e0f1;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServiceProceduresControl">
+    <children>
+      <Rectangle arcHeight="1.0" arcWidth="1.0" fill="#6d20d0" height="256.0" layoutX="655.0" layoutY="14.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" style="-fx-background-color: #6d20d0;" width="351.0" />
+      <Text fill="#8d4edb" layoutX="765.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Money" textAlignment="RIGHT">
+         <font>
+            <Font name="Poppins Thin" size="70.0" />
+         </font>
+      </Text>
+      <Text fill="#8d4edb" layoutX="837.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your" textAlignment="RIGHT">
+         <font>
+            <Font name="Poppins Thin" size="70.0" />
+         </font>
+      </Text>
+      <Label fx:id="money" layoutX="676.0" layoutY="67.0" prefHeight="48.0" prefWidth="316.0" text="R$ 0,00" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="50.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="676.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor a receber:">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="1.0" arcWidth="1.0" fill="WHITE" height="256.0" layoutX="14.0" layoutY="14.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="630.0" />
+      <Rectangle arcHeight="1.0" arcWidth="1.0" fill="WHITE" height="295.0" layoutX="14.0" layoutY="279.0" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="993.0" />
+      <Button fx:id="export" layoutX="732.0" layoutY="523.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="266.0" styleClass="buttonExport" text="Exportar Excell" textFill="WHITE">
+         <font>
+            <Font name="Poppins SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableServiceProcedures" layoutX="23.0" layoutY="288.0" prefHeight="226.0" prefWidth="976.0" style="-fx-border-color: #e35f91; -fx-border-radius: 3; -fx-font: 14px &quot;Poppins&quot;;" styleClass="customTableView">
+        <columns>
+          <TableColumn fx:id="dateColumn" prefWidth="137.0" style="-fx-alignment: CENTER;" text="Data do Serviço" />
+          <TableColumn fx:id="clientColumn" prefWidth="304.0" text="Cliente" />
+            <TableColumn fx:id="procedureColumn" prefWidth="252.0" style="-fx-alignment: CENTER;" text="Procedimento" />
+            <TableColumn fx:id="totalPriceColumn" prefWidth="140.0" style="-fx-alignment: CENTER;" text="R$ Total" />
+            <TableColumn fx:id="receivedPriceColumn" prefWidth="140.0" style="-fx-alignment: CENTER;" text="R$ Recebido" />
+        </columns>
+      </TableView>
+      <Button fx:id="addProcess" layoutX="511.0" layoutY="215.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="112.0" styleClass="buttonExport" text="Adicionar" textFill="WHITE">
+         <font>
+            <Font name="Poppins SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeProcess" layoutX="23.0" layoutY="523.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="156.0" styleClass="buttonRemove" text="Remover" textFill="WHITE">
+         <font>
+            <Font name="Poppins SemiBold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="clientName" layoutX="273.0" layoutY="130.0" prefHeight="35.0" prefWidth="351.0" promptText="Nome" style="-fx-border-color: #e35f91; -fx-border-radius: 3;">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font></TextField>
+      <DatePicker fx:id="dateProcess" editable="false" layoutX="32.0" layoutY="130.0" prefHeight="35.0" prefWidth="210.0" promptText="Data" style="-fx-border-color: #e35f91; -fx-border-radius: 3; -fx-font: 14px &quot;Poppins&quot;;" />
+      <ComboBox fx:id="procedures" layoutX="273.0" layoutY="215.0" prefHeight="35.0" prefWidth="220.0" promptText="Selecione..." style="-fx-border-color: #e35f91; -fx-border-radius: 3; fx-font-size: 12; -fx-font: 14px &quot;Poppins&quot;;" />
+      <TextField fx:id="priceProcess" layoutX="70.0" layoutY="215.0" prefHeight="35.0" prefWidth="170.0" promptText="0,00" style="-fx-border-color: #e35f91; -fx-border-radius: 3;">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font></TextField>
+      <Text fill="#464646" layoutX="32.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data procedimento">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#464646" layoutX="274.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do cliente">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#464646" layoutX="32.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor procedimento">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#464646" layoutX="273.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Procedimento">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="32.0" layoutY="31.0" prefHeight="48.0" prefWidth="590.0" text="Serviços e Procedimentos" textFill="#464646">
+         <font>
+            <Font name="Poppins ExtraBold" size="40.0" />
+         </font>
+      </Label>
+      <Text fill="#464646" layoutX="32.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R$" wrappingWidth="33.0">
+         <font>
+            <Font name="Poppins Medium" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="message" fill="#ff864b" layoutX="297.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="message" textAlignment="RIGHT" wrappingWidth="411.67999267578125">
+         <font>
+            <Font name="Poppins Medium" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
