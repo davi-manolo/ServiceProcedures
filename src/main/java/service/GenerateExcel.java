@@ -35,10 +35,12 @@ import org.apache.poi.ss.util.CellRangeAddress;
 public abstract class GenerateExcel {
 
     private static String month = LocalDate.now().getMonth().getDisplayName(TextStyle.FULL, StartApplication.REGION);
-    private static HSSFWorkbook workbook = new HSSFWorkbook();
-    private static HSSFSheet sheetClients = workbook.createSheet("Procedimentos");
+    private static HSSFWorkbook workbook;
+    private static HSSFSheet sheetClients;
 
     public static void createFile(File file, ObservableList<ServiceProcedure> procedures) {
+        workbook = new HSSFWorkbook();
+        sheetClients = workbook.createSheet("Procedimentos");
         sheetClients.setDefaultColumnWidth(20);
         sheetClients.setDefaultRowHeight((short) 600);
         int rownum = 2;
@@ -83,11 +85,10 @@ public abstract class GenerateExcel {
                 .format(ServiceProceduresControl.getTotalReceived()));
         sheetClients.addMergedRegion(new CellRangeAddress(0,0,0,4));
         try {
-            FileOutputStream out = new FileOutputStream(new File(file.getAbsolutePath() + month + ".xls"));
+            FileOutputStream out = new FileOutputStream(new File(file.getAbsolutePath()));
             workbook.write(out);
             out.close();
             System.out.println("Arquivo Excel criado com sucesso!");
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("Arquivo não encontrado!");
@@ -124,6 +125,10 @@ public abstract class GenerateExcel {
         bodyStyle.setBorderRight(BorderStyle.MEDIUM);
         bodyStyle.setBorderTop(BorderStyle.MEDIUM);
         return bodyStyle;
+    }
+
+    public static String getMonth() {
+        return month;
     }
 
 }

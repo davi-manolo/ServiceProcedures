@@ -28,6 +28,7 @@ public class ServiceProcedure {
         this.received = (price / 100) * loadProcedure.getValue(procedure);
         this.client = client;
         this.procedure = procedure;
+        this.priceFormated = NumberFormat.getCurrencyInstance().format(price);
         this.receivedFormated = NumberFormat.getCurrencyInstance().format(received);
         this.dateServiceFormated = dateService.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
